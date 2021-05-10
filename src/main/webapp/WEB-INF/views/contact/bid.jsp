@@ -118,6 +118,7 @@
 											</tr>
 										</thead>
 										<tbody>
+										
 										<c:forEach items="${recentBidList}" var="recentBidList">
 											<tr>
 												<th scope="row">${recentBidList.RN }</th>

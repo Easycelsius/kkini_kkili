@@ -14,7 +14,7 @@
     
     <!-- 파일에 로그 찍기! -->
     <appender name="fileLogger" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="file" value="d://git//kkini_kkili//kkini_kkili.Log"/>
+        <param name="file" value="d://05.GitHub//git//kkini_kkili//kkini_kkili.Log"/>
         <param name="Append" value="true"/>
         <param name="dataPattern" value=".yyyy-MM-dd"/>
         <layout class="org.apache.log4j.PatternLayout">

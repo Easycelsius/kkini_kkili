@@ -71,7 +71,7 @@ public class MailSendService {
     	
     	MimeMessage mail = mailSender.createMimeMessage();
         String mailContent = "<h1>[이메일 인증]</h1><br><p>아래 링크를 클릭하시면 이메일 인증이 완료됩니다.</p>"
-                            + "<a href='http://112.170.105.233:8180/kkini_kkili/main/signUpConfirm?email=" 
+                            + "<a href='http://localhost:8180/kkini_kkili/main/signUpConfirm?email=" 
                             + email + "&authKey=" + authKey + "' target='_blenk'>이메일 인증 확인</a>";
 
         try {

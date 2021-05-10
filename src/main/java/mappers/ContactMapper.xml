@@ -285,7 +285,7 @@
 			    FROM contact_history ch, member m
 			    WHERE ch.guest_id = m.member_id
 			    	AND contact_id = #{contactId}
-			    ORDER BY ch.bid_time DESC))
+			    ORDER BY ch.price DESC))
 		WHERE rn <= 3
 		]]>
 	</select>

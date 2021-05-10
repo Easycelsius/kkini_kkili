@@ -1,5 +1,6 @@
 package com.kk.controller;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kk.dao.impl.BookmarkDAOImpl;
@@ -380,8 +382,18 @@ public class MypageController {
 
 	// 프로필 등록
 	@RequestMapping(value = "mypage/saveProfile.do")
-	public String insertProfile(HostVO vo, HttpSession session) throws IOException {
+	public String insertProfile(String company, String uni, MultipartFile pic, MultipartFile file, String content, HttpSession session) throws IOException {
+		
+		HostVO vo = new HostVO();
+		
 		vo.setHostId(((MemberVO) session.getAttribute("member")).getMemberId());
+		vo.setCompany(company);
+		vo.setUni(uni);
+		vo.setPic(pic, String.valueOf(((MemberVO) session.getAttribute("member")).getMemberId()));
+//		System.out.println(vo.getPic() + " " + vo.getAuthFile() + " " + vo.getFile());
+		vo.setFile(file);
+		vo.setContent(content);
+		
 		log.info("MypageController : insertProfile 실행" + vo);
 		profileService.insertProfile(vo);
 		return "redirect:/mypage/viewProfile.do";

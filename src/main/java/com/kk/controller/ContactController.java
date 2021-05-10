@@ -219,7 +219,7 @@ public class ContactController {
 			// 집desktop : 112.170.105.233
 			// 씨앗 : 192.168.10.75
 			// 오라클 클라우드 : 140.238.20.172
-			String codeurl = new String(("http://112.170.105.233:8180/kkini_kkili/qr/signin.jsp?contactId=" + contactId + "&memberId=" + memberId).getBytes("UTF-8"), "ISO-8859-1");
+			String codeurl = new String(("http://localhost:8180/kkini_kkili/qr/signin.jsp?contactId=" + contactId + "&memberId=" + memberId).getBytes("UTF-8"), "ISO-8859-1");
 			// qr코드 바코드 생성값
 			int qrcodeColor = 0xFF000000;
 			// qr코드 배경색상값
